@@ -361,7 +361,7 @@
 								<div class="logo-container hasInfoCard logosize--yes">
 									<!-- Logo -->
 									<h1 class="site-logo logo" id="logo">
-										<a href="/trangchu" title="">
+										<a href="/homepage" title="">
 											<img src="http://mikenco.vn/wp-content/uploads/2020/10/logo-white.png" style="max-width: 180px" class="logo-img" alt="Kallyas"
 												 title="William Nguyen"/>
 										</a>
@@ -748,7 +748,7 @@
 										<!--/ Description -->
 
 										<!-- Cart -->
-										<form class="cart" method="post">
+										<form action="/cart" class="cart" method="post">
 											<!-- Variations -->
 											<table class="variations">
 												<tbody>
@@ -787,8 +787,10 @@
 												<!-- Button variations -->
 												<div class="variations_button">
 													<div class="quantity">
+														<input type="text" id="action" name="action" style="display: none" value="add">
 														<input type="number" step="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" min="1">
 													</div>
+													<input type="text" id="value${productDetail.getProductId()}" name="idProduct" style="display: none" value="${productDetail.getProductId()}">
 													<button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
 												</div>
 												<!--/ Button variations -->
@@ -834,7 +836,7 @@
 											PRODUCT DESCRIPTION
 										</h2>
 										<p>
-											The essence of Kallyas signature style lies in a long heritage of manufacturing and creating themes & templates collections and our designer’s ability to find inspiration in the millennial artistic world.
+											${productDetail.getDescription()}
 										</p>
 									</div>
 									<!--/ Description -->
@@ -933,204 +935,77 @@
 
 								<!-- Products -->
 								<ul class="products">
-									<!-- Product #1 -->
-									<li class="product">
-										<div class="product-list-item prod-layout-classic">
-											<!-- Badge container -->
-											<div class="hg_badge_container">
-												<span class="hg_badge_new">
-													NEW!
-												</span>
-											</div>
-											<!--/ Badge container -->
+									<c:forEach items='${requestScope["random3Product"]}'
+											   var="product">
+										<!-- Product #1 -->
+										<li class="product">
+											<div class="product-list-item prod-layout-classic">
+<%--												<!-- Badge container -->--%>
+<%--												<div class="hg_badge_container">--%>
+<%--												<span class="hg_badge_new">--%>
+<%--													NEW!--%>
+<%--												</span>--%>
+<%--												</div>--%>
+<%--												<!--/ Badge container -->--%>
 
-											<!-- Product container link -->
-											<a href="product.jsp">
-												<!-- Image wrapper -->
-												<span class="image kw-prodimage">
+												<!-- Product container link -->
+												<a href="product.jsp">
+													<!-- Image wrapper -->
+													<span class="image kw-prodimage">
 													<!-- Primary image -->
-													<img class="kw-prodimage-img" src="images/_shop/model6.jpg" alt="Kallyas Product" title="Kallyas Product" />
+													<img class="kw-prodimage-img" src="${product.getImgMain()}" alt="Kallyas Product" title="Kallyas Product" />
 
-													<!-- Secondary image -->
-													<img class="kw-prodimage-img-secondary" src="images/_shop/model6a.jpg" alt="Kallyas Product" title="Kallyas Product" />
+														<!-- Secondary image -->
+													<img class="kw-prodimage-img-secondary" src="${product.getImg1()}" alt="Kallyas Product" title="Kallyas Product" />
 												</span>
-												<!--/ Image wrapper -->
+													<!--/ Image wrapper -->
 
-												<!-- Details -->
-												<div class="details kw-details fixclear">
-													<!-- Title -->
-													<h3 class="kw-details-title">
-														Natural gray fox fur coat
-													</h3>
+													<!-- Details -->
+													<div class="details kw-details fixclear">
+														<!-- Title -->
+														<h3 class="kw-details-title">
+																${product.getNameProduct()}
+														</h3>
 
-													<!-- Price -->
-													<span class="price">
+														<!-- Price -->
+														<span class="price">
 														<span class="amount">
-															£2,335.00
+																${product.getPrice()}
 														</span>
 													</span>
-													<!--/ Price -->
+														<!--/ Price -->
 
-													<!-- Star rating -->
-													<div class="star-rating" title="Rated 5 out of 5">
+														<!-- Star rating -->
+														<div class="star-rating" title="Rated 5 out of 5">
 														<span style="width:100%">
 															<strong class="rating">5</strong> out of 5
 														</span>
+														</div>
 													</div>
+													<!--/ details fixclear -->
+												</a>
+												<!-- Product container link -->
+
+												<!-- Actions -->
+												<div class="actions kw-actions">
+													<a href="#" rel="nofollow" data-product_id="" data-product_sku="" data-quantity="1">
+														<svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 28 32">
+															<path class="svg-cart-icon" d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
+														</svg>
+													</a>
+													<a href="product.jsp">
+														<span class="more-icon fas fa-compress"></span>
+													</a>
 												</div>
-												<!--/ details fixclear -->
-											</a>
-											<!-- Product container link -->
-
-											<!-- Actions -->
-											<div class="actions kw-actions">
-												<a href="#" rel="nofollow" data-product_id="" data-product_sku="" data-quantity="1">
-													<svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 28 32">
-														<path class="svg-cart-icon" d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-													</svg>
-												</a>
-												<a href="product.jsp">
-													<span class="more-icon fas fa-compress"></span>
-												</a>
+												<!--/ Actions -->
 											</div>
-											<!--/ Actions -->
-										</div>
-										<!--/ product-list-item -->
-									</li>
-									<!--/ Product #1 -->
+											<!--/ product-list-item -->
+										</li>
+										<!--/ Product #1 -->
+									</c:forEach>
 
-									<!-- Product #2 -->
-									<li class="product">
-										<div class="product-list-item prod-layout-classic">
-											<!-- Badge container -->
-											<div class="hg_badge_container">
-												<span class="hg_badge_new">
-													NEW!
-												</span>
-											</div>
-											<!--/ Badge container -->
 
-											<!-- Product container link -->
-											<a href="product.jsp">
-												<!-- Image wrapper -->
-												<span class="image kw-prodimage">
-													<!-- Primary image -->
-													<img class="kw-prodimage-img" src="images/_shop/model7.jpg" alt="Kallyas Product" title="Kallyas Product" />
 
-													<!-- Secondary image -->
-													<img class="kw-prodimage-img-secondary" src="images/_shop/model7a.jpg" alt="Kallyas Product" title="Kallyas Product" />
-												</span>
-												<!--/ Image wrapper -->
-
-												<!-- Details -->
-												<div class="details kw-details fixclear">
-													<!-- Title -->
-													<h3 class="kw-details-title">
-														Natural gray fox fur coat
-													</h3>
-
-													<!-- Price -->
-													<span class="price">
-														<del data-was="WAS">
-															<span class="amount">£2,499.00</span>
-														</del>
-														<ins data-now="NOW">
-															<span class="amount">£2,199.00</span>
-														</ins>
-													</span>
-													<!--/ Price -->
-
-													<!-- Star rating -->
-													<div class="star-rating" title="Rated 5 out of 5">
-														<span style="width:100%">
-															<strong class="rating">5</strong> out of 5
-														</span>
-													</div>
-												</div>
-												<!--/ details fixclear -->
-											</a>
-											<!-- Product container link -->
-
-											<!-- Actions -->
-											<div class="actions kw-actions">
-												<a href="#" rel="nofollow" data-product_id="" data-product_sku="" data-quantity="1">
-													<svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 28 32">
-														<path class="svg-cart-icon" d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-													</svg>
-												</a>
-												<a href="product.jsp">
-													<span class="more-icon fas fa-compress"></span>
-												</a>
-											</div>
-											<!--/ Actions -->
-										</div>
-										<!--/ product-list-item -->
-									</li>
-									<!--/ Product #2 -->
-
-									<!-- Product #3 -->
-									<li class="product">
-										<div class="product-list-item prod-layout-classic">
-											<!-- Badge container -->
-											<div class="hg_badge_container">
-
-											</div>
-											<!--/ Badge container -->
-
-											<!-- Product container link -->
-											<a href="product.jsp">
-												<!-- Image wrapper -->
-												<span class="image kw-prodimage">
-													<!-- Primary image -->
-													<img class="kw-prodimage-img" src="images/_shop/model5.jpg" alt="Kallyas Product" title="Kallyas Product" />
-
-													<!-- Secondary image -->
-													<img class="kw-prodimage-img-secondary" src="images/_shop/model5a.jpg" alt="Kallyas Product" title="Kallyas Product" />
-												</span>
-												<!--/ Image wrapper -->
-
-												<!-- Details -->
-												<div class="details kw-details fixclear">
-													<!-- Title -->
-													<h3 class="kw-details-title">
-														Natural rose fox fur coat
-													</h3>
-
-													<!-- Price -->
-													<span class="price">
-														<span class="amount">
-															£3,400.00
-														</span>
-													</span>
-													<!--/ Price -->
-
-													<!-- Star rating -->
-													<div class="star-rating" title="Rated 4 out of 5">
-														<span style="width:80%">
-															<strong class="rating">4</strong> out of 5
-														</span>
-													</div>
-												</div>
-												<!--/ details fixclear -->
-											</a>
-											<!-- Product container link -->
-
-											<!-- Actions -->
-											<div class="actions kw-actions">
-												<a href="#" rel="nofollow" data-product_id="" data-product_sku="" data-quantity="1">
-													<svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 28 32">
-														<path class="svg-cart-icon" d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-													</svg>
-												</a>
-												<a href="product.jsp">
-													<span class="more-icon fas fa-compress"></span>
-												</a>
-											</div>
-											<!--/ Actions -->
-										</div>
-										<!--/ product-list-item -->
-									</li>
-									<!--/ Product #3 -->
 								</ul>
 								<!--/ Products -->
 							</div>
@@ -1192,46 +1067,41 @@
 
 								<!-- Product category list -->
 								<ul class="product-categories">
-									<li class="cat-item">
-										<a href="#">ACCESSORIES</a><span class="count">(9)</span>
-										<ul class="children">
-											<li class="cat-item"><a href="#">Belts</a><span class="count">(3)</span></li>
-											<li class="cat-item"><a href="#">Gloves</a><span class="count">(3)</span></li>
-											<li class="cat-item"><a href="#">Sunglasses</a><span class="count">(3)</span></li>
-										</ul>
-									</li>
-									<li class="cat-item current-cat">
-										<a href="#">CLOTHING</a><span class="count">(12)</span>
-										<ul class="children">
-											<li class="cat-item"><a href="#">Blazers</a><span class="count">(2)</span></li>
-											<li class="cat-item"><a href="#">Hoodies</a><span class="count">(6)</span></li>
-											<li class="cat-item"><a href="#">Shirts</a><span class="count">(4)</span></li>
-										</ul>
-									</li>
-									<li class="cat-item">
-										<a href="#">HOME GEAR</a><span class="count">(10)</span>
-										<ul class="children">
-											<li class="cat-item"><a href="#">Bathroom</a><span class="count">(2)</span></li>
-											<li class="cat-item"><a href="#">Bedding Sets</a><span class="count">(4)</span></li>
-											<li class="cat-item"><a href="#">Decorations</a><span class="count">(4)</span></li>
-										</ul>
-									</li>
-									<li class="cat-item">
-										<a href="#">KIDS WEAR</a><span class="count">(6)</span>
-										<ul class="children">
-											<li class="cat-item"><a href="#">Kids Accessories</a><span class="count">(0)</span></li>
-											<li class="cat-item"><a href="#">Kids Clothing</a><span class="count">(4)</span></li>
-											<li class="cat-item"><a href="#">Kids Shoes</a><span class="count">(2)</span></li>
-										</ul>
-									</li>
-									<li class="cat-item">
-										<a href="product-category.jsp">SHOES</a><span class="count">(9)</span>
-										<ul class="children">
-											<li class="cat-item"><a href="#">Ankle Boots</a><span class="count">(4)</span></li>
-											<li class="cat-item"><a href="#">High Heels</a><span class="count">(3)</span></li>
-											<li class="cat-item"><a href="#">Trainers</a><span class="count">(2)</span></li>
-										</ul>
-									</li>
+<%--									<li class="cat-item">--%>
+<%--										<a href="#">ACCESSORIES</a><span class="count">(9)</span>--%>
+<%--										<ul class="children">--%>
+<%--											<li class="cat-item"><a href="#">Belts</a><span class="count">(3)</span></li>--%>
+<%--											<li class="cat-item"><a href="#">Gloves</a><span class="count">(3)</span></li>--%>
+<%--											<li class="cat-item"><a href="#">Sunglasses</a><span class="count">(3)</span></li>--%>
+<%--										</ul>--%>
+<%--									</li>--%>
+	<c:forEach items='${requestScope["categoryListProduct"]}'
+
+			   var="categoryList">
+		<li class="cat-item current-cat">
+			<a href="/sanpham?category=${categoryList.getCategoryID()}">${categoryList.getNameCategory()}</a><span class="count">(12)</span>
+				<%--										<ul class="children">--%>
+				<%--											<li class="cat-item">--%>
+				<%--												<a href="#">Blazers</a><span class="count">(2)</span>--%>
+				<%--											</li>--%>
+				<%--											<li class="cat-item">--%>
+				<%--												<a href="#">Hoodies</a><span class="count">(6)</span>--%>
+				<%--											</li>--%>
+				<%--											<li class="cat-item">--%>
+				<%--												<a href="#">Shirts</a><span class="count">(4)</span>--%>
+				<%--											</li>--%>
+				<%--										</ul>--%>
+		</li>
+	</c:forEach>
+<%--									<li class="cat-item current-cat">--%>
+<%--										<a href="#">CLOTHING</a><span class="count">(12)</span>--%>
+<%--										<ul class="children">--%>
+<%--											<li class="cat-item"><a href="#">Blazers</a><span class="count">(2)</span></li>--%>
+<%--											<li class="cat-item"><a href="#">Hoodies</a><span class="count">(6)</span></li>--%>
+<%--											<li class="cat-item"><a href="#">Shirts</a><span class="count">(4)</span></li>--%>
+<%--										</ul>--%>
+<%--									</li>--%>
+
 								</ul>
 								<!--/ Product category list -->
 							</div>

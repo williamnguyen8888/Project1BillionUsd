@@ -34,6 +34,9 @@ public class ProductListController extends HttpServlet {
             ArrayList<Product> listProductCart =(ArrayList<Product>) session.getAttribute("listProductCart");
             request.setAttribute("listProductCartRead",listProductCart);
 
+
+
+
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product-category.jsp");
             requestDispatcher.forward(request,response);
         }else {
