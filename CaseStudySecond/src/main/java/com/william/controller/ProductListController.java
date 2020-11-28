@@ -21,6 +21,7 @@ public class ProductListController extends HttpServlet {
 
         ArrayList<CategoryModel> categoryList = ProductDAO.loadCategory();
         request.setAttribute("categoryListProduct", categoryList);
+
         String categoryId = request.getParameter("category");
 
         ArrayList<CategoryModel> categoryListDetail = ProductDAO.loadCategory();

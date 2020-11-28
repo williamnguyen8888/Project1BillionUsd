@@ -18,14 +18,14 @@ com/william/controller/RegisterController.java
  com.william.controller.RegisterController
 com/william/Dao/AccountDAO.java
  com.william.Dao.AccountDAO
-com/william/controller/Admin/HomeControler.java
- com.william.controller.Admin.HomeControler
 com/william/controller/ProductListController.java
  com.william.controller.ProductListController
 com/william/controller/Admin/ResultListProduct.java
  com.william.controller.Admin.ResultListProduct
 com/william/controller/ProductDetailController.java
  com.william.controller.ProductDetailController
+com/william/controller/Admin/HomeControler.java
+ com.william.controller.Admin.HomeControler
 com/william/controller/CartController.java
  com.william.controller.CartController
 com/william/controller/Admin/deleteProduct.java

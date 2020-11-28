@@ -1,5 +1,7 @@
 package com.william.controller.Admin;
 
+import com.william.Dao.ProductDAO;
+import com.william.model.CategoryModel;
 import com.william.model.Product;
 
 import javax.servlet.RequestDispatcher;
@@ -16,6 +18,10 @@ import java.util.ArrayList;
 public class HomeControler extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+        ArrayList<CategoryModel> categoryList = ProductDAO.loadCategory();
+        request.setAttribute("categoryListProduct", categoryList);
+
         HttpSession session = request.getSession();
         ArrayList<Product> listProductCart =(ArrayList<Product>)session.getAttribute("listProductCart");
         request.setAttribute("listProductCartRead",listProductCart);
@@ -26,9 +32,18 @@ public class HomeControler extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        ArrayList<CategoryModel> categoryList = ProductDAO.loadCategory();
+        request.setAttribute("categoryListProduct", categoryList);
+
         HttpSession session = request.getSession();
         ArrayList<Product> listProductCart =(ArrayList<Product>)session.getAttribute("listProductCart");
         request.setAttribute("listProductCartRead",listProductCart);
+
+        ArrayList<CategoryModel> categoryArrayListLimit = ProductDAO.loadCategoryLimit5();
+        request.setAttribute("categoryArrayListLimit",categoryArrayListLimit);
+
+
+
 
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/index.jsp");
         requestDispatcher.forward(request,response);

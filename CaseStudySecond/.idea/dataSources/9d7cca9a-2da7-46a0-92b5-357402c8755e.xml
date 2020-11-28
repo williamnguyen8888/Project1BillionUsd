@@ -1392,8 +1392,7 @@ checkNumber</ColNames>
     </column>
     <column id="399" parent="299" name="Img_Category">
       <Position>3</Position>
-      <DataType>varchar(20)|0s</DataType>
-      <Collation>utf8_general_ci</Collation>
+      <DataType>varchar(200)|0s</DataType>
     </column>
     <key id="400" parent="299" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>

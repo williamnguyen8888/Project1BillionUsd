@@ -370,6 +370,54 @@ public class ProductDAO {
         }
         return productsList;
     }
+    public static ArrayList<CategoryModel> loadCategoryLimit5() {
+        Connection conn = null;
+        ArrayList<CategoryModel> categoryList = new ArrayList<>();
 
+        try {
+            String url = "jdbc:mysql://localhost/mikencobrand";
+            String USER_NAME = "root";
+            String PASSWORD = "tuananhdeptrai";
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(url, USER_NAME, PASSWORD);
+            String query = "select * from category limit 5";
+            Statement stmt = null;
+            try {
+                PreparedStatement pre = conn.prepareStatement(query);
+                ResultSet rs = pre.executeQuery();
+
+                while (rs.next()) {
+                    CategoryModel categoryModel = new CategoryModel();
+                    categoryModel.setCategoryID(rs.getInt("categoryId"));
+                    categoryModel.setNameCategory(rs.getString("nameCategory"));
+                    categoryModel.setImg_Category(rs.getString("Img_Category"));
+                    categoryList.add(categoryModel);
+                }
+
+
+//                while (rs.next()) {
+//                    String name = rs.getString("username");
+//                    System.out.println(name);
+//                }
+            } catch (SQLException e) {
+                throw new Error("Problem", e);
+            } finally {
+                if (stmt != null) {
+                    stmt.close();
+                }
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new Error("Problem", e);
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return categoryList;
+    }
 }
 

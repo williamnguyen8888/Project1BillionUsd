@@ -472,8 +472,8 @@
                                                     <!--                                                    Company</a>-->
                                                     <ul class="clearfix">
                                                         <%--															<li class="col-sm-3" ><a href="/sanpham">ALL COLLECTION</a></li>--%>
-                                                        <c:forEach items='${requestScope["categoryListDetail"]}' var="categoryListDetailMenu">
-                                                            <li class="col-sm-3" style="float: left"><a href="/sanpham?category=${categoryListDetailMenu.getCategoryID()}">${categoryListDetailMenu.getNameCategory()}</a></li>
+                                                        <c:forEach items='${requestScope["categoryListProduct"]}' var="categoryListProduct">
+                                                            <li class="col-sm-3" style="float: left"><a href="/sanpham?category=${categoryListProduct.getCategoryID()}">${categoryListProduct.getNameCategory()}</a></li>
 
                                                         </c:forEach>
 
@@ -1953,40 +1953,16 @@
                 </div>
                 <!--/ col-sm-12 col-md-12 -->
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <!-- Image boxes style 4 element - bottom title -->
-                    <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
-                        <!-- Image box link wrapper -->
-                        <a href="#" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
-                            <!-- Image -->
-                            <img src="http://mikenco.vn/wp-content/uploads/2020/10/suede-weaab-copy.jpg"
-                                 class="img-fluid imgbox_image cover-fit-img"
-                                 alt="CLOTHING" title="CLOTHING"/>
-                            <!--/ Image -->
 
-                            <!-- Border helper -->
-                            <span class="imgboxes-border-helper"></span>
-                            <!--/ Border helper -->
-
-                            <!-- Title -->
-                            <h3 class="m_title imgboxes-title">
-                                PREMIUM CLASS
-                            </h3>
-                            <!--/ Title -->
-                        </a>
-                        <!--/ Image box link wrapper -->
-                    </div>
-                    <!--/ Image boxes style 4 element - bottom title -->
-                </div>
                 <!--/ col-sm-12 col-md-6 col-lg-4 -->
-
+                <c:forEach items='${requestScope["categoryArrayListLimit"]}' var="category">
                 <div class="col-sm-12 col-md-6 col-lg-4">
                     <!-- Image boxes style 4 element - bottom title -->
                     <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
                         <!-- Image box link wrapper -->
-                        <a href="#" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
+                        <a href="/sanpham?category=${category.getCategoryID()}" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
                             <!-- Image -->
-                            <img src="http://mikenco.vn/wp-content/uploads/2019/11/93642895_60070557dd3990825_sss5150592220939681792_n-1.jpg"
+                            <img src="${category.getImg_Category()}"
                                  class="img-fluid imgbox_image cover-fit-img"
                                  alt="SHOES" title="SHOES"/>
                             <!--/ Image -->
@@ -1997,7 +1973,7 @@
 
                             <!-- Title -->
                             <h3 class="m_title imgboxes-title">
-                                SPECIAL PRICES
+                                    ${category.getNameCategory()}
                             </h3>
                             <!--/ Title -->
                         </a>
@@ -2006,87 +1982,8 @@
                     <!--/ Image boxes style 4 element - bottom title -->
                 </div>
                 <!--/ col-sm-12 col-md-6 col-lg-4 -->
+                </c:forEach>
 
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <!-- Image boxes style 4 element - bottom title -->
-                    <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
-                        <!-- Image box link wrapper -->
-                        <a href="#" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
-                            <!-- Image -->
-                            <img src="http://mikenco.vn/wp-content/uploads/2020/05/93642895_60070557s3990825_5150592220939681792_n-copy.jpg"
-                                 class="img-fluid imgbox_image cover-fit-img"
-                                 alt="ACCESSORIES" title="ACCESSORIES"/>
-                            <!--/ Image -->
-
-                            <!-- Border helper -->
-                            <span class="imgboxes-border-helper"></span>
-                            <!--/ Border helper -->
-
-                            <!-- Title -->
-                            <h3 class="m_title imgboxes-title">
-                                PANTS
-                            </h3>
-                            <!--/ Title -->
-                        </a>
-                        <!--/ Image box link wrapper -->
-                    </div>
-                    <!--/ Image boxes style 4 element - bottom title -->
-                </div>
-                <!--/ col-sm-12 col-md-6 col-lg-4 -->
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <!-- Image boxes style 4 element - bottom title -->
-                    <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
-                        <!-- Image box link wrapper -->
-                        <a href="#" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
-                            <!-- Image -->
-                            <img src="http://mikenco.vn/wp-content/uploads/2020/06/short-mikenco-authentic-gangster-.jpg"
-                                 class="img-fluid imgbox_image cover-fit-img"
-                                 alt="KIDS" title="KIDS"/>
-                            <!--/ Image -->
-
-                            <!-- Border helper -->
-                            <span class="imgboxes-border-helper"></span>
-                            <!--/ Border helper -->
-
-                            <!-- Title -->
-                            <h3 class="m_title imgboxes-title">
-                                SHORT
-                            </h3>
-                            <!--/ Title -->
-                        </a>
-                        <!--/ Image box link wrapper -->
-                    </div>
-                    <!--/ Image boxes style 4 element - bottom title -->
-                </div>
-                <!--/ col-sm-12 col-md-6 col-lg-4 -->
-
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <!-- Image boxes style 4 element - bottom title -->
-                    <div class="box image-boxes imgboxes_style4 kl-title_style_bottom">
-                        <!-- Image box link wrapper -->
-                        <a href="#" target="_self" class="imgboxes4_link imgboxes-wrapper" title="">
-                            <!-- Image -->
-                            <img src="http://mikenco.vn/wp-content/uploads/2020/08/clutch-web.jpg"
-                                 class="img-fluid imgbox_image cover-fit-img"
-                                 alt="HOME GEAR" title="HOME GEAR"/>
-                            <!--/ Image -->
-
-                            <!-- Border helper -->
-                            <span class="imgboxes-border-helper"></span>
-                            <!--/ Border helper -->
-
-                            <!-- Title -->
-                            <h3 class="m_title imgboxes-title">
-                                ACCESSORIES
-                            </h3>
-                            <!--/ Title -->
-                        </a>
-                        <!--/ Image box link wrapper -->
-                    </div>
-                    <!--/ Image boxes style 4 element - bottom title -->
-                </div>
-                <!--/ col-sm-12 col-md-6 col-lg-4 -->
 
                 <div class="col-sm-12 col-md-6 col-lg-4 align-self-center">
                     <!-- Title element with custom top padding -->
