@@ -265,7 +265,7 @@
 								</div>
 
 								<!-- Top Header contact text -->
-								<div class="kl-header-toptext align-self-center">	
+								<div class="kl-header-toptext align-self-center">
 									<span class="topnav-item--text">QUESTIONS? CALL: </span>
 									<a href="tel:0900 800 900" class="fw-bold">0900 800 900</a>
 									<i class="phone-header fas fa-phone ml-5 visible-xs visible-sm visible-md"></i>
@@ -276,35 +276,35 @@
 
 							<!-- Header Top Right Side -->
 							<div class="site-header-top-right d-flex">
-<%--								<!-- Languages -->--%>
-<%--								<div class="topnav topnav--lang align-self-center">--%>
-<%--									<div class="languages drop">--%>
-<%--										<a href="#" class="topnav-item">--%>
-<%--											<span class="fas fa-globe xs-icon"></span>--%>
-<%--											<span class="topnav-item--text">LANGUAGES</span>--%>
-<%--										</a>--%>
-<%--										<div class="pPanel">--%>
-<%--											<ul class="inner">--%>
-<%--												<li class="toplang-item active">--%>
-<%--													<a href="#">--%>
-<%--														<img src="images/en.svg" alt="English" class="toplang-flag "> English--%>
-<%--													</a>--%>
-<%--												</li>--%>
-<%--												<li class="toplang-item">--%>
-<%--													<a href="#">--%>
-<%--														<img src="images/fr.svg" alt="Francais" class="toplang-flag "> Francais--%>
-<%--													</a>--%>
-<%--												</li>--%>
-<%--												<li class="toplang-item">--%>
-<%--													<a href="#">--%>
-<%--														<img src="images/es.svg" alt="Espanol" class="toplang-flag "> Espanol--%>
-<%--													</a>--%>
-<%--												</li>--%>
-<%--											</ul>--%>
-<%--										</div>--%>
-<%--									</div>--%>
-<%--								</div>--%>
-<%--								<!--/ Languages -->--%>
+								<%--								<!-- Languages -->--%>
+								<%--								<div class="topnav topnav--lang align-self-center">--%>
+								<%--									<div class="languages drop">--%>
+								<%--										<a href="#" class="topnav-item">--%>
+								<%--											<span class="fas fa-globe xs-icon"></span>--%>
+								<%--											<span class="topnav-item--text">LANGUAGES</span>--%>
+								<%--										</a>--%>
+								<%--										<div class="pPanel">--%>
+								<%--											<ul class="inner">--%>
+								<%--												<li class="toplang-item active">--%>
+								<%--													<a href="#">--%>
+								<%--														<img src="images/en.svg" alt="English" class="toplang-flag "> English--%>
+								<%--													</a>--%>
+								<%--												</li>--%>
+								<%--												<li class="toplang-item">--%>
+								<%--													<a href="#">--%>
+								<%--														<img src="images/fr.svg" alt="Francais" class="toplang-flag "> Francais--%>
+								<%--													</a>--%>
+								<%--												</li>--%>
+								<%--												<li class="toplang-item">--%>
+								<%--													<a href="#">--%>
+								<%--														<img src="images/es.svg" alt="Espanol" class="toplang-flag "> Espanol--%>
+								<%--													</a>--%>
+								<%--												</li>--%>
+								<%--											</ul>--%>
+								<%--										</div>--%>
+								<%--									</div>--%>
+								<%--								</div>--%>
+								<%--								<!--/ Languages -->--%>
 
 								<div class="topnav support--panel align-self-center">
 									<!-- Support panel trigger -->
@@ -323,7 +323,7 @@
 										<span class="topnav-item--text">LOGIN</span>
 									</a>
 								</div>
-								<!--/ Login trigger -->			
+								<!--/ Login trigger -->
 
 								<!-- header search -->
 								<div id="search" class="header-search align-self-center">
@@ -449,7 +449,7 @@
 														<!--                                                                                               class="zn_mega_title">The-->
 														<!--                                                    Company</a>-->
 														<ul class="clearfix">
-<%--															<li class="col-sm-3" ><a href="/sanpham">ALL COLLECTION</a></li>--%>
+															<%--															<li class="col-sm-3" ><a href="/sanpham">ALL COLLECTION</a></li>--%>
 															<c:forEach items='${requestScope["categoryListDetail"]}' var="categoryListDetailMenu">
 																<li class="col-sm-3" style="float: left"><a href="/sanpham?category=${categoryListDetailMenu.getCategoryID()}">${categoryListDetailMenu.getNameCategory()}</a></li>
 
@@ -463,40 +463,40 @@
 															<!--                                                        <li><a href="our-team.html">OUR TEAM</a></li>-->
 														</ul>
 													</li>
-<%--													<li class="menu-item-has-children col-sm-3">--%>
-<%--														<!--                                                    <a href="#"-->--%>
-<%--														<!--                                                                                               class="zn_mega_title">Work-->--%>
-<%--														<!--                                                    & Stories</a>-->--%>
-<%--														<ul class="clearfix">--%>
-<%--															<li><a href="blog-post.html">JACKETS</a></li>--%>
-<%--															<li><a href="photo-gallery.html">SWEATERS</a></li>--%>
-<%--															<li><a href="photo-gallery-alt.html">SHIRTS</a></li>--%>
-<%--															<!--                                                        <li><a href="portfolio-item.html">PORTFOLIO ITEM</a></li>-->--%>
-<%--															<!--                                                        <li><a href="testimonials.html">TESTIMONIALS</a></li>-->--%>
-<%--															<!--                                                        <li><a href="agency-product.jsp">AGENCY - PRODUCT</a></li>-->--%>
-<%--														</ul>--%>
-<%--													</li>--%>
-<%--													<li class="menu-item-has-children col-sm-3">--%>
-<%--														<!--                                                    <a href="#"-->--%>
-<%--														<!--                                                                                               class="zn_mega_title">Dynamics</a>-->--%>
-<%--														<ul class="clearfix">--%>
-<%--															<li><a href="historic.html">T-SHIRTS</a></li>--%>
-<%--															<li><a href="faq.html">PANTS</a></li>--%>
-<%--															<li><a href="process.html">SHORTS</a></li>--%>
-<%--															<!--                                                        <li><a href="careers.html">CAREERS</a></li>-->--%>
-<%--														</ul>--%>
-<%--													</li>--%>
-<%--													<li class="menu-item-has-children col-sm-3">--%>
-<%--														<!--                                                    <a href="#"-->--%>
-<%--														<!--                                                                                               class="zn_mega_title">System</a>-->--%>
-<%--														<ul class="clearfix">--%>
-<%--															<li><a href="eror.jsp">SHOES</a></li>--%>
-<%--															<li><a href="coming-soon.html" name="ACCESSORIES" >ACCESSORIES</a></li>--%>
-<%--															<li><a href="page-without-sidebar.html">PAGE WITHOUT SIDEBAR</a>--%>
-<%--															</li>--%>
-<%--															<!--                                                        <li><a href="page-with-sidebar.html">PAGE WITH SIDEBAR</a></li>-->--%>
-<%--														</ul>--%>
-<%--													</li>--%>
+													<%--													<li class="menu-item-has-children col-sm-3">--%>
+													<%--														<!--                                                    <a href="#"-->--%>
+													<%--														<!--                                                                                               class="zn_mega_title">Work-->--%>
+													<%--														<!--                                                    & Stories</a>-->--%>
+													<%--														<ul class="clearfix">--%>
+													<%--															<li><a href="blog-post.html">JACKETS</a></li>--%>
+													<%--															<li><a href="photo-gallery.html">SWEATERS</a></li>--%>
+													<%--															<li><a href="photo-gallery-alt.html">SHIRTS</a></li>--%>
+													<%--															<!--                                                        <li><a href="portfolio-item.html">PORTFOLIO ITEM</a></li>-->--%>
+													<%--															<!--                                                        <li><a href="testimonials.html">TESTIMONIALS</a></li>-->--%>
+													<%--															<!--                                                        <li><a href="agency-product.jsp">AGENCY - PRODUCT</a></li>-->--%>
+													<%--														</ul>--%>
+													<%--													</li>--%>
+													<%--													<li class="menu-item-has-children col-sm-3">--%>
+													<%--														<!--                                                    <a href="#"-->--%>
+													<%--														<!--                                                                                               class="zn_mega_title">Dynamics</a>-->--%>
+													<%--														<ul class="clearfix">--%>
+													<%--															<li><a href="historic.html">T-SHIRTS</a></li>--%>
+													<%--															<li><a href="faq.html">PANTS</a></li>--%>
+													<%--															<li><a href="process.html">SHORTS</a></li>--%>
+													<%--															<!--                                                        <li><a href="careers.html">CAREERS</a></li>-->--%>
+													<%--														</ul>--%>
+													<%--													</li>--%>
+													<%--													<li class="menu-item-has-children col-sm-3">--%>
+													<%--														<!--                                                    <a href="#"-->--%>
+													<%--														<!--                                                                                               class="zn_mega_title">System</a>-->--%>
+													<%--														<ul class="clearfix">--%>
+													<%--															<li><a href="eror.jsp">SHOES</a></li>--%>
+													<%--															<li><a href="coming-soon.html" name="ACCESSORIES" >ACCESSORIES</a></li>--%>
+													<%--															<li><a href="page-without-sidebar.html">PAGE WITHOUT SIDEBAR</a>--%>
+													<%--															</li>--%>
+													<%--															<!--                                                        <li><a href="page-with-sidebar.html">PAGE WITH SIDEBAR</a></li>-->--%>
+													<%--														</ul>--%>
+													<%--													</li>--%>
 												</ul>
 											</li>
 											<li>
@@ -525,14 +525,17 @@
 										<div class="pPanel">
 											<div class="inner cart-container">
 												<div class="widget_shopping_cart_content">
-													<ul class="cart_list product_list_widget ">
-														<li>
-														<a href="#" class="remove" title="Remove this item">×</a>
-														<a href="#" class="product-title">
-															<img src="images/img4-90x90.jpg" alt="Hoodie With Patch Logo" title="Hoodie With Patch Logo" />Hoodie With Patch Logo
-														</a>
-														<span class="color-variations">Blue</span>
-														<span class="quantity">1 × <span class="amount">$99.90</span></span></li>
+													<ul class="cart_list product_list_widget resultProductInCart">
+														<c:forEach items='${requestScope["listProductCartRead"]}' var="product">
+															<li>
+																<a href="#" class="remove" title="Remove this item">×</a>
+																<a href="#" class="product-title">
+																	<img src="${product.getImgMain()}" alt="Hoodie With Patch Logo" title="Hoodie With Patch Logo" />${product.getNameProduct()}
+																</a>
+																<span class="color-variations">Blue</span>
+																<span class="quantity">1 × <span class="amount">${product.getPrice()}</span></span>
+															</li>
+														</c:forEach>
 													</ul>
 													<!-- end product list -->
 													<p class="total">
@@ -550,14 +553,14 @@
 								<!--/ Shopping Cart -->
 
 								<!-- Call to action ribbon Free Quote (Contact form pop-up element) -->
-<!--								<div class="quote-ribbon">-->
-<!--									<a href="#contact_panel" id="ctabutton" class="ctabutton kl-cta-ribbon" title="GET A FREE QUOTE" target="_self">-->
-<!--										<strong>FREE</strong>QUOTE-->
-<!--										<svg version="1.1" class="trisvg"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveaspectratio="none" width="14px" height="5px" viewbox="0 0 14 5" enable-background="new 0 0 14 5" xml:space="preserve">-->
-<!--											<polygon fill-rule="nonzero" points="14 0 7 5 0 0"></polygon>-->
-<!--										</svg>-->
-<!--									</a>-->
-<!--								</div>-->
+								<!--								<div class="quote-ribbon">-->
+								<!--									<a href="#contact_panel" id="ctabutton" class="ctabutton kl-cta-ribbon" title="GET A FREE QUOTE" target="_self">-->
+								<!--										<strong>FREE</strong>QUOTE-->
+								<!--										<svg version="1.1" class="trisvg"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveaspectratio="none" width="14px" height="5px" viewbox="0 0 14 5" enable-background="new 0 0 14 5" xml:space="preserve">-->
+								<!--											<polygon fill-rule="nonzero" points="14 0 7 5 0 0"></polygon>-->
+								<!--										</svg>-->
+								<!--									</a>-->
+								<!--								</div>-->
 								<!--/ Call to action ribbon Free Quote (Contact form pop-up element) -->
 							</div>
 							<!--/ .site-header-main-right -->

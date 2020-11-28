@@ -255,14 +255,13 @@
                 <!-- Header Top container -->
                 <div class="siteheader-container container">
                     <!-- Header Top -->
-                    <div class="site-header-row site-header-top d-flex flex-row">
+                    <div class="site-header-row site-header-top d-flex justify-content-between">
                         <!-- Header Top Left Side -->
-                        <div class="site-header-top-left w-md-60 w-50 d-flex justify-content-start">
+                        <div class="site-header-top-left d-flex">
                             <!-- Header Top Social links -->
                             <ul class="topnav social-icons sc--clean align-self-center">
                                 <li>
-                                    <a href="https://www.facebook.com/beodeptrailoitaiai/" target="_self"
-                                       title="Facebook">
+                                    <a href="#" target="_self" title="Facebook">
                                         <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
@@ -290,7 +289,7 @@
                             <!-- Top Header contact text -->
                             <div class="kl-header-toptext align-self-center">
                                 <span class="topnav-item--text">QUESTIONS? CALL: </span>
-                                <a href="tel:0900 800 900" class="fw-bold">0369 111 314</a>
+                                <a href="tel:0900 800 900" class="fw-bold">0900 800 900</a>
                                 <i class="phone-header fas fa-phone ml-5 visible-xs visible-sm visible-md"></i>
                             </div>
                             <!--/ Top Header contact text -->
@@ -298,65 +297,52 @@
                         <!--/ .site-header-top-left -->
 
                         <!-- Header Top Right Side -->
-                        <div class="site-header-top-right w-md-40 w-50 d-flex justify-content-end">
-                            <!-- Languages -->
-                            <div class="topnav topnav--lang align-self-center">
-                                <div class="languages drop">
-                                    <a href="#" class="topnav-item">
-                                        <span class="fas fa-globe xs-icon"></span>
-                                        <span class="topnav-item--text">LANGUAGES</span>
-                                    </a>
-                                    <div class="pPanel">
-                                        <ul class="inner">
-                                            <li class="toplang-item active">
-                                                <a href="#">
-                                                    <img src="images/en.svg" alt="English" class="toplang-flag ">
-                                                    English
-                                                </a>
-                                            </li>
-                                            <li class="toplang-item">
-                                                <a href="#">
-                                                    <img src="images/fr.svg" alt="Francais" class="toplang-flag ">
-                                                    Francais
-                                                </a>
-                                            </li>
-                                            <li class="toplang-item">
-                                                <a href="#">
-                                                    <img src="images/es.svg" alt="Espanol" class="toplang-flag ">
-                                                    Espanol
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/ Languages -->
+                        <div class="site-header-top-right d-flex">
+                            <%--								<!-- Languages -->--%>
+                            <%--								<div class="topnav topnav--lang align-self-center">--%>
+                            <%--									<div class="languages drop">--%>
+                            <%--										<a href="#" class="topnav-item">--%>
+                            <%--											<span class="fas fa-globe xs-icon"></span>--%>
+                            <%--											<span class="topnav-item--text">LANGUAGES</span>--%>
+                            <%--										</a>--%>
+                            <%--										<div class="pPanel">--%>
+                            <%--											<ul class="inner">--%>
+                            <%--												<li class="toplang-item active">--%>
+                            <%--													<a href="#">--%>
+                            <%--														<img src="images/en.svg" alt="English" class="toplang-flag "> English--%>
+                            <%--													</a>--%>
+                            <%--												</li>--%>
+                            <%--												<li class="toplang-item">--%>
+                            <%--													<a href="#">--%>
+                            <%--														<img src="images/fr.svg" alt="Francais" class="toplang-flag "> Francais--%>
+                            <%--													</a>--%>
+                            <%--												</li>--%>
+                            <%--												<li class="toplang-item">--%>
+                            <%--													<a href="#">--%>
+                            <%--														<img src="images/es.svg" alt="Espanol" class="toplang-flag "> Espanol--%>
+                            <%--													</a>--%>
+                            <%--												</li>--%>
+                            <%--											</ul>--%>
+                            <%--										</div>--%>
+                            <%--									</div>--%>
+                            <%--								</div>--%>
+                            <%--								<!--/ Languages -->--%>
 
                             <div class="topnav support--panel align-self-center">
                                 <!-- Support panel trigger -->
                                 <label for="support_p" class="topnav-item spanel-label">
-                                    <i class="fas fa-info-circle support-info"></i>
+                                    <i class="fas fa-info-circle support-info closed"></i>
+                                    <i class="far fa-times-circle support-info opened"></i>
                                     <span class="topnav-item--text">SUPPORT</span>
                                 </label>
                                 <!--/ Support panel trigger -->
                             </div>
-                            <%
-                                String userName = (String) session.getAttribute("username");
-                                String logo = "fa fa-user";
-                                String urlDirect = "#";
-                                if (userName == null) {
-                                    userName = "LOGIN";
-                                    logo = "fas fa-sign-in-alt";
-                                    urlDirect = "#login_panel";
-                                }
 
-                            %>
                             <!-- Login trigger -->
                             <div class="topnav login--panel align-self-center">
-                                <a class="topnav-item popup-with-form" href="<%=urlDirect%>">
-                                    <i class="login-icon <%=logo%> visible-xs xs-icon"></i>
-
-                                    <span class="topnav-item--text"><%=userName%></span>
+                                <a class="topnav-item popup-with-form" href="#login_panel">
+                                    <i class="login-icon fas fa-sign-in-alt visible-xs xs-icon"></i>
+                                    <span class="topnav-item--text">LOGIN</span>
                                 </a>
                             </div>
                             <!--/ Login trigger -->
@@ -365,13 +351,9 @@
                             <div id="search" class="header-search align-self-center">
                                 <a href="#" class="searchBtn "><span class="fas fa-search white-icon"></span></a>
                                 <div class="search-container">
-                                    <form id="searchform" class="header-searchform"
-                                          action="https://www.google.com/search" method="get" target="_blank">
-                                        <input id="q" name="q" maxlength="20" class="inputbox" type="text" size="20"
-                                               value="SEARCH ..." onblur="if (this.value=='') this.value='SEARCH ...';"
-                                               onfocus="if (this.value=='SEARCH ...') this.value='';">
-                                        <button type="submit" id="searchsubmit"
-                                                class="searchsubmit fas fa-search white-icon"></button>
+                                    <form id="searchform" class="header-searchform" action="https://www.google.com/search" method="get" target="_blank">
+                                        <input id="q" name="q" maxlength="20" class="inputbox" type="text" size="20" value="SEARCH ..." onblur="if (this.value=='') this.value='SEARCH ...';" onfocus="if (this.value=='SEARCH ...') this.value='';">
+                                        <button type="submit" id="searchsubmit" class="searchsubmit fas fa-search white-icon"></button>
                                     </form>
                                 </div>
                             </div>
@@ -401,10 +383,9 @@
                             <div class="logo-container hasInfoCard logosize--yes">
                                 <!-- Logo -->
                                 <h1 class="site-logo logo" id="logo">
-                                    <a href="index.jsp" title="">
-                                        <img src="http://mikenco.vn/wp-content/uploads/2020/10/logo-white.png"
-                                             style="max-width: 180px" class="logo-img" alt="Kallyas"
-                                             title="Kallyas Gigantic Premium Template"/>
+                                    <a href="/trangchu" title="">
+                                        <img src="http://mikenco.vn/wp-content/uploads/2020/10/logo-white.png" style="max-width: 180px" class="logo-img" alt="Kallyas"
+                                             title="William Nguyen"/>
                                     </a>
                                 </h1>
                                 <!--/ Logo -->
@@ -416,12 +397,9 @@
                                             <div class="col-sm-6 left-side d-flex">
                                                 <div class="align-self-center">
                                                     <div class="infocard-wrapper text-center">
-                                                        <img src="images/kallyas_icon.png" class="mb-25" alt="Kallyas"
-                                                             title="Kallyas"/>
+                                                        <img src="images/kallyas_icon.png" class="mb-25" alt="Kallyas" title="Kallyas" />
                                                         <p>
-                                                            Kallyas is an gigantic ultra-premium, responsive template
-                                                            built for today websites with over <strong>350
-                                                            elements</strong>.
+                                                            Kallyas is an gigantic ultra-premium, responsive template built for today websites with over <strong>350 elements</strong>.
                                                         </p>
                                                     </div>
                                                     <!--/ infocard-wrapper -->
@@ -437,26 +415,19 @@
                                                         Street nr 100, 4536534, Chicago, US <br>
                                                         <a href="mailto:sales@yourwebsite.com">sales@yourwebsite.com</a>
                                                     </p>
-                                                    <a href="https://goo.gl/maps/PeHfizUvT3AHiFNM8" class="map-link"
-                                                       target="_blank"
-                                                       title="">
+                                                    <a href="http://goo.gl/maps/1OhOu" class="map-link" target="_blank" title="">
                                                         <span class="fas fa-map-marker-alt white-icon mr-10"></span>
                                                         <span>Open in Google Maps</span>
                                                     </a>
                                                 </div>
                                                 <div style="height:20px;">
                                                 </div>
-
                                                 <!-- Social links clean style -->
                                                 <ul class="social-icons sc--clean">
-                                                    <li><a href="#" target="_self" class="fab fa-twitter"
-                                                           title="Twitter"></a></li>
-                                                    <li><a href="#" target="_self" class="fab fa-facebook-f"
-                                                           title="Facebook"></a></li>
-                                                    <li><a href="#" target="_self" class="fab fa-dribbble"
-                                                           title="Dribbble"></a></li>
-                                                    <li><a href="#" target="_blank" class="fab fa-google-plus-g"
-                                                           title="Google Plus"></a></li>
+                                                    <li><a href="#" target="_self" class="fab fa-twitter" title="Twitter"></a></li>
+                                                    <li><a href="#" target="_self" class="fab fa-facebook-f" title="Facebook"></a></li>
+                                                    <li><a href="#" target="_self" class="fab fa-dribbble" title="Dribbble"></a></li>
+                                                    <li><a href="#" target="_blank" class="fab fa-google-plus-g" title="Google Plus"></a></li>
                                                 </ul>
                                                 <!--/ Social links clean style -->
                                             </div>
@@ -490,59 +461,64 @@
                                 <div id="main-menu" class="main-nav zn_mega_wrapper">
                                     <ul id="menu-main-menu" class="main-menu clearfix">
                                         <li>
-                                            <a href="_5-fashion-homepage.html">HOME</a>
+                                            <a href="/trangchu">HOME</a>
                                         </li>
                                         <li class="menu-item-has-children menu-item-mega-parent"><a
-                                                href="#">PRODUCTS</a>
+                                                href="/sanpham">PRODUCTS</a>
                                             <ul class="hg_mega_container row clearfix">
-                                                <li class="menu-item-has-children col-sm-3">
+                                                <li class="menu-item-has-children col-sm-12">
                                                     <!--                                                    <a href="#"-->
                                                     <!--                                                                                               class="zn_mega_title">The-->
                                                     <!--                                                    Company</a>-->
                                                     <ul class="clearfix">
-                                                        <li><a href="product-category.jsp">ALL COLLECTION</a></li>
-                                                        <li><a href="about-us-alt.html">PREMIUM CLASS</a></li>
-                                                        <li><a href="about-me.html">SPECIAL PRICES</a></li>
+                                                        <%--															<li class="col-sm-3" ><a href="/sanpham">ALL COLLECTION</a></li>--%>
+                                                        <c:forEach items='${requestScope["categoryListDetail"]}' var="categoryListDetailMenu">
+                                                            <li class="col-sm-3" style="float: left"><a href="/sanpham?category=${categoryListDetailMenu.getCategoryID()}">${categoryListDetailMenu.getNameCategory()}</a></li>
+
+                                                        </c:forEach>
+
+
+
+
                                                         <!--                                                        <li><a href="contact-us.html">CONTACT US</a></li>-->
                                                         <!--                                                        <li><a href="our-services.html">OUR SERVICES</a></li>-->
                                                         <!--                                                        <li><a href="our-team.html">OUR TEAM</a></li>-->
                                                     </ul>
                                                 </li>
-                                                <li class="menu-item-has-children col-sm-3">
-                                                    <!--                                                    <a href="#"-->
-                                                    <!--                                                                                               class="zn_mega_title">Work-->
-                                                    <!--                                                    & Stories</a>-->
-                                                    <ul class="clearfix">
-                                                        <li><a href="blog-post.html">JACKETS</a></li>
-                                                        <li><a href="photo-gallery.html">SWEATERS</a></li>
-                                                        <li><a href="photo-gallery-alt.html">SHIRTS</a></li>
-                                                        <!--                                                        <li><a href="portfolio-item.html">PORTFOLIO ITEM</a></li>-->
-                                                        <!--                                                        <li><a href="testimonials.html">TESTIMONIALS</a></li>-->
-                                                        <!--                                                        <li><a href="agency-product.jsp">AGENCY - PRODUCT</a></li>-->
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children col-sm-3">
-                                                    <!--                                                    <a href="#"-->
-                                                    <!--                                                                                               class="zn_mega_title">Dynamics</a>-->
-                                                    <ul class="clearfix">
-                                                        <li><a href="historic.html">T-SHIRTS</a></li>
-                                                        <li><a href="faq.html">PANTS</a></li>
-                                                        <li><a href="process.html">SHORTS</a></li>
-                                                        <!--                                                        <li><a href="careers.html">CAREERS</a></li>-->
-                                                    </ul>
-                                                </li>
-                                                <li class="menu-item-has-children col-sm-3">
-                                                    <!--                                                    <a href="#"-->
-                                                    <!--                                                                                               class="zn_mega_title">System</a>-->
-                                                    <ul class="clearfix">
-                                                        <li><a href="eror.jsp">SHOES</a></li>
-                                                        <li><a href="coming-soon.html"
-                                                               name="ACCESSORIES">ACCESSORIES</a></li>
-                                                        <li><a href="page-without-sidebar.html">PAGE WITHOUT SIDEBAR</a>
-                                                        </li>
-                                                        <!--                                                        <li><a href="page-with-sidebar.html">PAGE WITH SIDEBAR</a></li>-->
-                                                    </ul>
-                                                </li>
+                                                <%--													<li class="menu-item-has-children col-sm-3">--%>
+                                                <%--														<!--                                                    <a href="#"-->--%>
+                                                <%--														<!--                                                                                               class="zn_mega_title">Work-->--%>
+                                                <%--														<!--                                                    & Stories</a>-->--%>
+                                                <%--														<ul class="clearfix">--%>
+                                                <%--															<li><a href="blog-post.html">JACKETS</a></li>--%>
+                                                <%--															<li><a href="photo-gallery.html">SWEATERS</a></li>--%>
+                                                <%--															<li><a href="photo-gallery-alt.html">SHIRTS</a></li>--%>
+                                                <%--															<!--                                                        <li><a href="portfolio-item.html">PORTFOLIO ITEM</a></li>-->--%>
+                                                <%--															<!--                                                        <li><a href="testimonials.html">TESTIMONIALS</a></li>-->--%>
+                                                <%--															<!--                                                        <li><a href="agency-product.jsp">AGENCY - PRODUCT</a></li>-->--%>
+                                                <%--														</ul>--%>
+                                                <%--													</li>--%>
+                                                <%--													<li class="menu-item-has-children col-sm-3">--%>
+                                                <%--														<!--                                                    <a href="#"-->--%>
+                                                <%--														<!--                                                                                               class="zn_mega_title">Dynamics</a>-->--%>
+                                                <%--														<ul class="clearfix">--%>
+                                                <%--															<li><a href="historic.html">T-SHIRTS</a></li>--%>
+                                                <%--															<li><a href="faq.html">PANTS</a></li>--%>
+                                                <%--															<li><a href="process.html">SHORTS</a></li>--%>
+                                                <%--															<!--                                                        <li><a href="careers.html">CAREERS</a></li>-->--%>
+                                                <%--														</ul>--%>
+                                                <%--													</li>--%>
+                                                <%--													<li class="menu-item-has-children col-sm-3">--%>
+                                                <%--														<!--                                                    <a href="#"-->--%>
+                                                <%--														<!--                                                                                               class="zn_mega_title">System</a>-->--%>
+                                                <%--														<ul class="clearfix">--%>
+                                                <%--															<li><a href="eror.jsp">SHOES</a></li>--%>
+                                                <%--															<li><a href="coming-soon.html" name="ACCESSORIES" >ACCESSORIES</a></li>--%>
+                                                <%--															<li><a href="page-without-sidebar.html">PAGE WITHOUT SIDEBAR</a>--%>
+                                                <%--															</li>--%>
+                                                <%--															<!--                                                        <li><a href="page-with-sidebar.html">PAGE WITH SIDEBAR</a></li>-->--%>
+                                                <%--														</ul>--%>
+                                                <%--													</li>--%>
                                             </ul>
                                         </li>
                                         <li>
@@ -553,6 +529,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <!--/ main menu -->
                                 <!--/ main menu -->
                             </div>
                             <!--/ .main-menu-wrapper -->
@@ -570,26 +547,25 @@
                                     <div class="pPanel">
                                         <div class="inner cart-container">
                                             <div class="widget_shopping_cart_content">
-                                                <ul class="cart_list product_list_widget ">
-                                                    <li>
-                                                        <a href="#" class="remove" title="Remove this item">×</a>
-                                                        <a href="#" class="product-title">
-                                                            <img src="http://mikenco.vn/wp-content/uploads/2020/10/web-tiger-.jpg"
-                                                                 alt="Kallyas Product" title="Kallyas Product"/>Galaxy
-                                                            Tiger
-                                                        </a>
-                                                        <span class="color-variations">Grej</span>
-                                                        <span class="quantity">1 × <span class="amount">1.000.000</span></span>
-                                                    </li>
+                                                <ul class="cart_list product_list_widget resultProductInCart">
+                                                    <c:forEach items='${requestScope["listProductCartRead"]}' var="product">
+                                                        <li>
+                                                            <a href="#" class="remove" title="Remove this item">×</a>
+                                                            <a href="#" class="product-title">
+                                                                <img src="${product.getImgMain()}" alt="Hoodie With Patch Logo" title="Hoodie With Patch Logo" />${product.getNameProduct()}
+                                                            </a>
+                                                            <span class="color-variations">Blue</span>
+                                                            <span class="quantity">1 × <span class="amount">${product.getPrice()}</span></span>
+                                                        </li>
+                                                    </c:forEach>
                                                 </ul>
                                                 <!-- end product list -->
                                                 <p class="total">
-                                                    <strong>Subtotal:</strong><span class="amount">1.000.000</span>
+                                                    <strong>Subtotal:</strong><span class="amount">$99.90</span>
                                                 </p>
                                                 <p class="buttons">
                                                     <a href="cart.html" class="button wc-forward">View Cart</a>
-                                                    <a href="checkout.html"
-                                                       class="button checkout wc-forward">Checkout</a>
+                                                    <a href="checkout.html" class="button checkout wc-forward">Checkout</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -598,7 +574,7 @@
                             </div>
                             <!--/ Shopping Cart -->
 
-                            <!--								&lt;!&ndash; Call to action ribbon Free Quote (Contact form pop-up element) &ndash;&gt;-->
+                            <!-- Call to action ribbon Free Quote (Contact form pop-up element) -->
                             <!--								<div class="quote-ribbon">-->
                             <!--									<a href="#contact_panel" id="ctabutton" class="ctabutton kl-cta-ribbon" title="GET A FREE QUOTE" target="_self">-->
                             <!--										<strong>FREE</strong>QUOTE-->
@@ -607,7 +583,7 @@
                             <!--										</svg>-->
                             <!--									</a>-->
                             <!--								</div>-->
-                            <!--								&lt;!&ndash;/ Call to action ribbon Free Quote (Contact form pop-up element) &ndash;&gt;-->
+                            <!--/ Call to action ribbon Free Quote (Contact form pop-up element) -->
                         </div>
                         <!--/ .site-header-main-right -->
                     </div>

@@ -14,12 +14,12 @@ com/william/controller/Admin/ResultListProduct.java
  com.william.controller.Admin.ResultListProduct
 com/william/controller/LoginController.java
  com.william.controller.LoginController
-com/william/controller/ProductDetailController.java
- com.william.controller.ProductDetailController
+com/william/controller/RegisterController.java
+ com.william.controller.RegisterController
 com/william/Dao/AccountDAO.java
  com.william.Dao.AccountDAO
-com/william/controller/Admin/HomeControler.java
- com.william.controller.Admin.HomeControler
+com/william/controller/ProductDetailController.java
+ com.william.controller.ProductDetailController
 com/william/controller/CartController.java
  com.william.controller.CartController
 com/william/model/Product.java
@@ -32,5 +32,5 @@ com/william/Dao/AdminDAO.java
  com.william.Dao.AdminDAO
 com/william/controller/Admin/EditProduct.java
  com.william.controller.Admin.EditProduct
-com/william/controller/RegisterController.java
- com.william.controller.RegisterController
+com/william/controller/Admin/HomeControler.java
+ com.william.controller.Admin.HomeControler
