@@ -988,12 +988,26 @@
 
 												<!-- Actions -->
 												<div class="actions kw-actions">
-													<a href="#" rel="nofollow" data-product_id="" data-product_sku="" data-quantity="1">
-														<svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 28 32">
-															<path class="svg-cart-icon" d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
-														</svg>
-													</a>
-													<a href="product.jsp">
+													<form action="/cart" method="post" id="addToCart${product.getProductId()}">
+														<input type="text" id="action${product.getProductId()}" name="action" style="display: none" value="add">
+														<input type="text" id="value${product.getProductId()}" name="idProduct" style="display: none" value="${product.getProductId()}">
+														<a href="#${product.getProductId()}" rel="nofollow" data-product_id="" data-product_sku=""
+														   data-quantity="1" >
+
+															<svg onclick="submitDetailsForm${product.getProductId()}()" xmlns="http://www.w3.org/2000/svg" width="28" height="32"
+																 viewBox="0 0 28 32">
+																<path class="svg-cart-icon"
+																	  d="M26,8.91A1,1,0,0,0,25,8H20V6A6,6,0,1,0,8,6V8H3A1,1,0,0,0,2,8.91l-2,22A1,1,0,0,0,1,32H27a1,1,0,0,0,1-1.089ZM10,6a4,4,0,0,1,8,0V8H10V6ZM2.1,30L3.913,10H8v2.277a2,2,0,1,0,2,0V10h8v2.277a2,2,0,1,0,2,0V10h4.087L25.9,30H2.1Z"></path>
+															</svg>
+														</a>
+
+													</form>
+													<script>
+														function submitDetailsForm${product.getProductId()}() {
+															$("#addToCart${product.getProductId()}").submit();
+														}
+													</script>
+													<a href="/product?productId=${product.getProductId()}">
 														<span class="more-icon fas fa-compress"></span>
 													</a>
 												</div>
