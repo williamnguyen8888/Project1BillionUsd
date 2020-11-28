@@ -535,14 +535,17 @@
                                     <div class="pPanel">
                                         <div class="inner cart-container">
                                             <div class="widget_shopping_cart_content">
-                                                <ul class="cart_list product_list_widget ">
+                                                <ul class="cart_list product_list_widget resultProductInCart">
+                                                    <c:forEach items='${requestScope["listProductCartRead"]}' var="product">
                                                     <li>
                                                         <a href="#" class="remove" title="Remove this item">×</a>
                                                         <a href="#" class="product-title">
-                                                            <img src="images/img4-90x90.jpg" alt="Hoodie With Patch Logo" title="Hoodie With Patch Logo" />Hoodie With Patch Logo
+                                                            <img src="${product.getImgMain()}" alt="Hoodie With Patch Logo" title="Hoodie With Patch Logo" />${product.getNameProduct()}
                                                         </a>
                                                         <span class="color-variations">Blue</span>
-                                                        <span class="quantity">1 × <span class="amount">$99.90</span></span></li>
+                                                        <span class="quantity">1 × <span class="amount">${product.getPrice()}</span></span>
+                                                    </li>
+                                                    </c:forEach>
                                                 </ul>
                                                 <!-- end product list -->
                                                 <p class="total">
@@ -721,8 +724,8 @@
                                         <form action="/cart" method="post" id="addToCart${product.getProductId()}">
                                             <input type="text" id="action${product.getProductId()}" name="action" style="display: none" value="add">
                                             <input type="text" id="value${product.getProductId()}" name="idProduct" style="display: none" value="${product.getProductId()}">
-                                                <a href="#${product.getProductId()}" rel="nofollow" data-product_id="" data-product_sku=""
-                                                       data-quantity="1" >
+                                            <a href="#${product.getProductId()}" rel="nofollow" data-product_id="" data-product_sku=""
+                                               data-quantity="1" >
 
                                                 <svg onclick="submitDetailsForm${product.getProductId()}()" xmlns="http://www.w3.org/2000/svg" width="28" height="32"
                                                      viewBox="0 0 28 32">
@@ -732,11 +735,11 @@
                                             </a>
 
                                         </form>
-<script>
-    function submitDetailsForm${product.getProductId()}() {
-        $("#addToCart${product.getProductId()}").submit();
-    }
-</script>
+                                        <script>
+                                            function submitDetailsForm${product.getProductId()}() {
+                                                $("#addToCart${product.getProductId()}").submit();
+                                            }
+                                        </script>
                                         <a href="/product?productId=${product.getProductId()}">
                                             <span class="more-icon fas fa-compress"></span>
                                         </a>
@@ -832,20 +835,20 @@
                                 <%--									</li>--%>
                                 <c:forEach items='${requestScope["categoryListProduct"]}'
                                            var="categoryList">
-									<li class="cat-item current-cat">
-										<a href="/sanpham?category=${categoryList.getCategoryID()}">${categoryList.getNameCategory()}</a><span class="count">(12)</span>
-<%--										<ul class="children">--%>
-<%--											<li class="cat-item">--%>
-<%--												<a href="#">Blazers</a><span class="count">(2)</span>--%>
-<%--											</li>--%>
-<%--											<li class="cat-item">--%>
-<%--												<a href="#">Hoodies</a><span class="count">(6)</span>--%>
-<%--											</li>--%>
-<%--											<li class="cat-item">--%>
-<%--												<a href="#">Shirts</a><span class="count">(4)</span>--%>
-<%--											</li>--%>
-<%--										</ul>--%>
-									</li>
+                                    <li class="cat-item current-cat">
+                                        <a href="/sanpham?category=${categoryList.getCategoryID()}">${categoryList.getNameCategory()}</a><span class="count">(12)</span>
+                                            <%--										<ul class="children">--%>
+                                            <%--											<li class="cat-item">--%>
+                                            <%--												<a href="#">Blazers</a><span class="count">(2)</span>--%>
+                                            <%--											</li>--%>
+                                            <%--											<li class="cat-item">--%>
+                                            <%--												<a href="#">Hoodies</a><span class="count">(6)</span>--%>
+                                            <%--											</li>--%>
+                                            <%--											<li class="cat-item">--%>
+                                            <%--												<a href="#">Shirts</a><span class="count">(4)</span>--%>
+                                            <%--											</li>--%>
+                                            <%--										</ul>--%>
+                                    </li>
                                 </c:forEach>
 
                                 <%--									<li class="cat-item">--%>
